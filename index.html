@@ -1,100 +1,125 @@
-<!doctype html><html lang="ru"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#171717"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Wedding Film">
-<link rel="manifest" href="manifest.webmanifest"><title>Wedding Filmmaker</title>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111318">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Wedding Photographer</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#101010;color:#f5f5f5;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif}.app{max-width:520px;margin:auto;min-height:100vh;background:#171717;padding-top:env(safe-area-inset-top)}
-header{padding:18px;display:flex;justify-content:space-between;align-items:center}.ey{font-size:11px;color:#888;letter-spacing:1.5px}.title{font-size:28px;font-weight:800}.content{padding:0 16px 100px}
-.card{background:#222;border:1px solid #303030;border-radius:20px;padding:16px;margin:12px 0}.hero{background:linear-gradient(145deg,#2b2b2b,#1e1e1e)}.names{font-size:23px;font-weight:800;margin:7px 0}.muted{color:#999;font-size:13px}.row{display:flex;gap:9px;margin-top:15px}.stat{flex:1;background:#191919;border-radius:13px;padding:12px}.stat b{display:block;font-size:17px}
-button{border:0;border-radius:14px;padding:11px 14px;background:#f2f2f2;color:#111;font-weight:750;font-size:15px}.darkbtn{background:#333;color:#fff}.danger{background:#4a2525;color:#fff}.iconbtn{width:45px;height:45px;padding:0;font-size:25px}
-h3{margin:23px 2px 10px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:#222;border:1px solid #303030;border-radius:17px;padding:15px;min-height:94px}.tile .ico{font-size:25px}.tile b{display:block;margin-top:8px}.tile small{color:#999}
-.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 12px}.tabs button{white-space:nowrap;background:#282828;color:#aaa}.tabs button.active{background:#f2f2f2;color:#111}
-.listrow{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #333}.listrow:last-child{border:0}.grow{flex:1}
-.timeline{border-left:2px solid #444;margin-left:8px;padding-left:18px}.event{position:relative;margin:19px 0}.event:before{content:"";position:absolute;width:9px;height:9px;background:#eee;border-radius:50%;left:-24px;top:5px}.time{font-weight:750}
-.check{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #333}.check:last-child{border:0}.check input{width:20px;height:20px}
-.bottom{position:fixed;z-index:5;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:rgba(25,25,25,.96);border-top:1px solid #333;display:flex;justify-content:space-around;padding:9px 4px calc(9px + env(safe-area-inset-bottom));backdrop-filter:blur(16px)}.bottom button{background:none;color:#aaa;padding:5px;font-size:11px}.bottom button b{display:block;font-size:20px;color:#fff}
-.sheet{display:none;position:fixed;z-index:10;inset:0;background:#0009;align-items:flex-end}.sheet.open{display:flex}.panel{width:min(520px,100%);margin:auto;background:#232323;border-radius:25px 25px 0 0;padding:20px 18px calc(25px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto}.panel h2{margin:0 0 14px}
-input,textarea{width:100%;background:#171717;color:#fff;border:1px solid #444;border-radius:12px;padding:13px;font-size:16px;margin:5px 0 9px}textarea{min-height:90px}.actions{display:flex;gap:8px}.actions>*{flex:1}
+:root{--bg:#0d0f13;--card:#171a21;--card2:#20242d;--text:#f5f6f8;--muted:#9da3ae;--accent:#d7b56d;--ok:#65c466;--danger:#e46b6b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:rgba(13,15,19,.94);backdrop-filter:blur(18px);padding:18px 16px 12px;border-bottom:1px solid #262a33}
+h1{font-size:25px;margin:0 0 4px}.sub{color:var(--muted);font-size:13px}
+main{padding:16px 16px 100px;max-width:760px;margin:auto}.hero{background:linear-gradient(145deg,#252933,#171a21);border:1px solid #303541;border-radius:22px;padding:18px;margin-bottom:14px}
+.row{display:flex;gap:10px;align-items:center;justify-content:space-between}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.card{background:var(--card);border:1px solid #292d36;border-radius:18px;padding:15px;margin:10px 0}.metric{font-size:25px;font-weight:700}.muted{color:var(--muted)}button,input,textarea,select{font:inherit}button{border:0;border-radius:13px;padding:11px 14px;background:var(--card2);color:var(--text);font-weight:600}button.primary{background:var(--accent);color:#16130e}.small{font-size:12px}.tag{display:inline-block;padding:5px 8px;border-radius:999px;background:#282d36;color:#dce0e7;margin:3px;font-size:12px}
+.progress{height:8px;background:#2a2e36;border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:var(--accent);width:0}
+.item{display:flex;gap:11px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #292d36}.item:last-child{border-bottom:0}.item input{width:21px;height:21px;accent-color:var(--accent)}
+.time{font-weight:700;min-width:52px}.done{text-decoration:line-through;color:#737984}.section-title{margin-top:22px;margin-bottom:8px;font-size:18px}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:10;background:rgba(17,19,24,.97);border-top:1px solid #292d36;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+nav button{background:transparent;padding:8px 3px;color:var(--muted);font-size:11px}nav button.active{color:var(--accent)}
+.page{display:none}.page.active{display:block}.check{color:var(--ok);font-weight:700}
+input[type=text],input[type=time],input[type=date],textarea,select{width:100%;background:#101218;border:1px solid #303541;color:var(--text);border-radius:12px;padding:12px;margin-top:6px}
+label{display:block;color:var(--muted);font-size:12px;margin:10px 0}.actions{display:flex;gap:8px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><h1>Wedding Photographer</h1><div class="sub">Съёмка свадьбы · v0.7</div></header>
+<main>
+<section id="home" class="page active">
+<div class="hero">
+<div class="row"><div><div class="muted small">Ближайшая свадьба</div><h2 id="weddingName">Новая свадьба</h2></div><button onclick="show('settings')">⚙️</button></div>
+<div class="grid">
+<div><div class="muted small">Дата</div><div id="weddingDate">—</div></div>
+<div><div class="muted small">Гостей</div><div id="guests">—</div></div>
+</div></div>
+<div class="grid">
+<div class="card"><div class="muted small">Снято</div><div class="metric" id="doneMetric">0%</div></div>
+<div class="card"><div class="muted small">Кадров</div><div class="metric" id="shotMetric">0/0</div></div>
+</div>
+<div class="card"><div class="row"><b>Прогресс свадьбы</b><span id="progressText">0%</span></div><div class="progress"><i id="progressBar"></i></div></div>
+<div class="section-title">Сегодня</div><div id="todayList"></div>
+</section>
 
-.badge{display:inline-block;padding:5px 9px;border-radius:10px;background:#303030;color:#aaa;font-size:12px}.badge.ok{background:#243c2a;color:#9fe0ad}
-.progress{height:8px;background:#333;border-radius:99px;overflow:hidden;margin:9px 0}.progress>div{height:100%;background:#eee;width:0}
-.money{font-size:25px;font-weight:800}.balance{color:#ffb4b4}.paid{color:#a9e8b3}
-.stage{display:flex;gap:8px;overflow:auto;padding-bottom:8px}.stage button{white-space:nowrap;background:#292929;color:#aaa}.stage button.active{background:#f2f2f2;color:#111}
+<section id="timeline" class="page">
+<h2>Таймлайн</h2>
+<div class="card">
+<label>Добавить этап</label>
+<div class="grid"><input id="newTime" type="time"><input id="newStage" type="text" placeholder="Например: Прогулка"></div>
+<button class="primary" style="margin-top:8px" onclick="addStage()">Добавить</button>
+</div>
+<div id="timelineList"></div>
+</section>
 
-.now{border:1px solid #555;background:linear-gradient(145deg,#2d2d2d,#202020)}
-.now .big{font-size:30px;font-weight:850}.next{margin-top:10px;padding-top:10px;border-top:1px solid #3a3a3a}
-.live{display:inline-flex;align-items:center;gap:6px}.dot{width:8px;height:8px;background:#ddd;border-radius:50%;display:inline-block}
-.event.done{opacity:.45}.event.current{background:#292929;border-radius:14px;padding:10px;margin-left:-10px}.event.current:before{width:11px;height:11px}
-.timer{font-variant-numeric:tabular-nums;font-size:20px;font-weight:800}.route{display:flex;gap:7px;overflow:auto;margin:10px 0}.route button{white-space:nowrap;background:#292929;color:#aaa}.route button.active{background:#f2f2f2;color:#111}
+<section id="shots" class="page">
+<h2>Shot List</h2>
+<div class="card"><div class="muted small">Текущий этап</div><h3 id="currentStage">Все кадры</h3><div class="actions"><button onclick="filterShots('all')">Все</button><button onclick="filterShots('must')">⭐ Обязательные</button><button onclick="filterShots('people')">Люди</button><button onclick="filterShots('details')">Детали</button></div></div>
+<div id="shotList"></div>
+</section>
 
-.shootnow{background:linear-gradient(145deg,#292929,#1e1e1e);border:1px solid #444}
-.shothead{display:flex;justify-content:space-between;align-items:center;gap:10px}.shotnum{font-size:13px;color:#999}.shottitle{font-size:21px;font-weight:800;margin:8px 0}
-.bigcheck{display:flex;align-items:center;gap:12px;padding:15px 0;border-top:1px solid #333}.bigcheck input{width:25px;height:25px}.shotdone{opacity:.5;text-decoration:line-through}
-.moment{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #333}.moment:last-child{border:0}.star{font-size:21px}
+<section id="tools" class="page">
+<h2>Работа</h2>
+<div class="card"><b>📋 Чек-лист техники</b><div id="gear"></div></div>
+<div class="card"><b>💰 Финансы</b><div class="grid">
+<div><div class="muted small">Стоимость</div><div id="price">60 000 ₽</div></div>
+<div><div class="muted small">Предоплата</div><div id="prepay">—</div></div>
+</div></div>
+<div class="card"><b>📝 Заметки</b><textarea id="notes" rows="6" placeholder="Парковка, адреса, пожелания пары, особенности света..."></textarea><button class="primary" style="margin-top:8px" onclick="saveNotes()">Сохранить</button></div>
+</section>
 
-.stagebox{padding:13px;border-radius:15px;background:#191919;border:1px solid #333;margin-top:10px}
-.stagebox b{font-size:18px}.stagebox small{display:block;color:#999;margin-top:4px}
-</style></head><body><div class="app">
-<header><div><div class="ey">WEDDING FILMMAKER</div><div class="title" id="pageTitle">Мои свадьбы</div></div><button class="iconbtn" onclick="newWedding()">＋</button></header>
-<main class="content" id="content"></main>
-<nav class="bottom"><button onclick="home()"><b>⌂</b>Главная</button><button onclick="weddingsPage()"><b>▣</b>Свадьбы</button><button onclick="tasksPage()"><b>☑</b>Задачи</button><button onclick="settingsPage()"><b>⚙</b>Настройки</button></nav></div>
-<div class="sheet" id="sheet"><div class="panel" id="panel"></div></div>
+<section id="settings" class="page">
+<h2>Свадьба</h2>
+<div class="card">
+<label>Имена пары<input id="setName" type="text"></label>
+<label>Дата<input id="setDate" type="date"></label>
+<label>Количество гостей<input id="setGuests" type="text" placeholder="120"></label>
+<label>Стоимость<input id="setPrice" type="text" placeholder="60000"></label>
+<button class="primary" onclick="saveSettings()">Сохранить</button>
+</div>
+<div class="card"><b>Данные</b><p class="muted small">Все данные сохраняются на этом устройстве. Экспорт/облако можно добавить в следующей версии.</p><button onclick="resetApp()">Сбросить данные</button></div>
+</section>
+</main>
+<nav>
+<button class="active" onclick="show('home',this)">🏠<br>Главная</button>
+<button onclick="show('timeline',this)">🕒<br>Таймлайн</button>
+<button onclick="show('shots',this)">📸<br>Кадры</button>
+<button onclick="show('tools',this)">🧰<br>Работа</button>
+</nav>
 <script>
-const KEY="wf_v02";let data=JSON.parse(localStorage.getItem(KEY)||'{"weddings":[],"selected":null,"tasks":[]}');
-const tasksDefault=["Зарядить аккумуляторы","Очистить карты памяти","Проверить Canon R6 Mark II","Проверить 24–70","Проверить 70–200","Зарядить DJI RS5","Проверить микрофоны","Запасные батареи"];
-function save(){localStorage.setItem(KEY,JSON.stringify(data))}const $=x=>document.getElementById(x);function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}function fmt(n){return Number(n||0).toLocaleString("ru-RU")}
-function seed(){if(!data.weddings.length){let w={id:crypto.randomUUID(),bride:"Мария",groom:"Алексей",date:"2026-09-26",city:"Ставрополь",price:60000,paid:0,start:"12:00",end:"23:00",notes:"",timeline:defaultTimeline(),shots:defaultShots(),interviews:defaultQuestions(),delivery:{film:false,clip:false,photos:false,backup:false},contract:{number:"",signed:false,comment:""}};data.weddings=[w];data.selected=w.id;save()}}
-function selected(){return data.weddings.find(w=>w.id===data.selected)}
-function ensureV04(w){if(!w)return;w.live=w.live||{event:0,running:false,shot:0};w.timeline=w.timeline||defaultTimeline();w.timeline=w.timeline.map(e=>({...e,done:!!e.done}));w.shots=w.shots||defaultShots();w.shots=w.shots.map(s=>({...s,cat:s.cat||"Общее",done:!!s.done,important:!!s.important}));}
-function minutesOf(s){let m=String(s||"").match(/(\d{1,2}):(\d{2})/);return m?Number(m[1])*60+Number(m[2]):0}
-
-function stageName(w){ensureV04(w);let e=w.timeline[w.live.running?w.live.event:currentIndex(w)];return e?.a||"Съёмка"}
-function stageShots(w){ensureV04(w);let stage=stageName(w);let map={"Сборы":"Сборы","ЗАГС":"ЗАГС","Прогулка":"Прогулка","Ресторан":"Ресторан"};let key=Object.keys(map).find(k=>stage.includes(k));if(stage.includes("Финал"))key="Финал";return key?w.shots.filter(s=>s.cat===map[key]||s.cat===key):w.shots.filter(s=>!s.done)}
-function currentIndex(w){ensureV04(w);let now=new Date();let cur=now.getHours()*60+now.getMinutes(),idx=0;w.timeline.forEach((e,i)=>{if(minutesOf(e.t)<=cur)idx=i});return idx}
-
-function shootingPanel(w){ensureV04(w);let stage=stageName(w);let list=stageShots(w);let cur=list.find(x=>!x.done);let total=list.length,done=list.filter(x=>x.done).length;return `<div class="card shootnow"><div class="shothead"><span class="muted">СЪЁМКА СЕЙЧАС</span><span class="badge">${done}/${total}</span></div><div class="stagebox"><b>${esc(stage)}</b><small>Показываю кадры только для текущего этапа</small></div>${cur?`<div class="shottitle">${esc(cur.x)}</div><div class="muted">${esc(cur.cat)}${cur.important?' · ⭐ ВАЖНЫЙ КАДР':''}</div><label class="bigcheck"><input type="checkbox" onchange="completeCurrentShot(this.checked)"><span>Снято</span></label><div class="row"><button class="darkbtn" onclick="skipShot()">Пропустить</button><button onclick="importantCurrent()">⭐ Важный кадр</button></div>`:`<div class="shottitle">Этап снят 🎉</div><div class="muted">Все кадры текущего этапа отмечены. Переходи дальше по таймлайну.</div><button style="margin-top:12px" onclick="nextEvent()">Следующий этап →</button>`}</div>`}
-function completeCurrentShot(v){if(!v)return;let w=selected();ensureV04(w);let s=stageShots(w).find(x=>!x.done);if(s)s.done=true;save();home()}
-function skipShot(){let w=selected();ensureV04(w);let s=stageShots(w).find(x=>!x.done);if(s){s.skipped=true;w.shots.push(w.shots.splice(w.shots.indexOf(s),1)[0]);save();home()}}
-function importantCurrent(){let w=selected();ensureV04(w);let s=stageShots(w).find(x=>!x.done);if(s){s.important=!s.important;save();home()}}
-function livePanel(w){ensureV04(w);let idx=w.live.running?Math.min(w.live.event,w.timeline.length-1):currentIndex(w),e=w.timeline[idx]||{t:"—",a:"Нет событий",b:""};let next=w.timeline[idx+1];return `<div class="card now"><div class="live"><span class="dot"></span><span class="muted">${w.live.running?"СЕЙЧАС":"ТЕКУЩИЙ ЭТАП"}</span></div><div class="big">${esc(e.a)}</div><div class="muted">${esc(e.t)} · ${esc(e.b)}</div><div style="margin-top:12px"><button onclick="toggleLive()">${w.live.running?"⏸ Остановить этап":"▶ Начать этап"}</button> <button class="darkbtn" onclick="nextEvent()">Следующий →</button></div>${next?`<div class="next"><span class="muted">Далее</span><br><b>${esc(next.t)} — ${esc(next.a)}</b></div>`:""}</div>`}function defaultTimeline(){return [{t:"12:00",a:"Сборы",b:"Невеста · детали · портреты"},{t:"14:00",a:"ЗАГС",b:"Вход · церемония · выход"},{t:"15:00",a:"Прогулка",b:"Пара · детали · гости"},{t:"17:00",a:"Ресторан",b:"Первый танец · тосты · эмоции"}]}
-function defaultShots(){return [
-["Детали платья и колец","Сборы"],["Подготовка невесты","Сборы"],["Подготовка жениха","Сборы"],["Портреты пары","Прогулка"],["Реакции родителей","ЗАГС"],["Встреча","ЗАГС"],["ЗАГС: вход","ЗАГС"],["ЗАГС: церемония","ЗАГС"],["ЗАГС: выход","ЗАГС"],["Прогулка","Прогулка"],["Декор ресторана","Ресторан"],["Первый танец","Ресторан"],["Тосты и реакции","Ресторан"],["Танцы","Ресторан"],["Финальный кадр","Финал"]
-].map(a=>({x:a[0],cat:a[1],done:false,important:false}))}
-function defaultQuestions(){return ["За что ты любишь своего партнёра?","Как вы познакомились?","Какой момент вместе ты никогда не забудешь?","Что изменилось в твоей жизни после вашей встречи?","Что ты хочешь сказать ему/ей, но редко говоришь вслух?","Каким ты видишь вашу семью через 10 лет?"].map(x=>({x,answer:""}))}
-function home(){seed();$("pageTitle").textContent="Мои свадьбы";let w=selected();$("content").innerHTML=`<div class="card hero"><div class="muted">${esc(w.date)} · ${esc(w.city)}</div><div class="names">${esc(w.groom)} & ${esc(w.bride)}</div><div class="muted">${w.start}–${w.end} · полный день</div><div class="row"><div class="stat"><b>${w.start}–${w.end}</b><span class="muted">съёмка</span></div><div class="stat"><b>${fmt(w.price)} ₽</b><span class="muted">стоимость</span></div></div><div style="margin-top:12px"><button onclick="editWedding('${w.id}')">Редактировать</button></div></div>
-<div class="card"><b>Клиент</b><div style="margin-top:8px">${esc(w.groom)} & ${esc(w.bride)}</div><div class="muted">${esc(w.city)} · ${esc(w.date)}</div><div class="muted">Получено: ${fmt(w.paid)} ₽ · Остаток: ${fmt((w.price||0)-(w.paid||0))} ₽</div></div>${livePanel(w)}${shootingPanel(w)}<div class="card"><b>Ближайшее событие</b><div style="font-size:18px;margin:10px 0 3px">🎥 Сборы невесты</div><div class="muted">${w.start} · ${esc(w.city)}</div></div>
-<h3>Свадьба</h3><div class="grid"><div class="tile" onclick="modulePage('timeline')"><div class="ico">⏱</div><b>Таймлайн</b><small>Расписание дня</small></div><div class="tile" onclick="modulePage('shots')"><div class="ico">🎥</div><b>Съёмка</b><small>Shot list</small></div><div class="tile" onclick="modulePage('interview')"><div class="ico">🎤</div><b>Интервью</b><small>Вопросы и ответы</small></div><div class="tile" onclick="modulePage('edit')"><div class="ico">🎬</div><b>Монтаж</b><small>Структура фильма</small></div></div><div class="tile" onclick="modulePage('finance')"><div class="ico">💰</div><b>Финансы</b><small>Оплата и остаток</small></div><div class="tile" onclick="modulePage('delivery')"><div class="ico">📦</div><b>Выдача</b><small>Контроль материалов</small></div><div class="tile" onclick="modulePage('contract')"><div class="ico">📄</div><b>Договор</b><small>Статус и номер</small></div></div>`}
-function modulePage(type){let w=selected();let title={timeline:"Таймлайн",shots:"Съёмка",interview:"Интервью",edit:"Монтаж",finance:"Финансы",delivery:"Выдача",contract:"Договор"}[type];$("pageTitle").textContent=title;let tabs=`<div class="tabs">${["timeline","shots","interview","edit","finance","delivery","contract"].map(k=>`<button class="${k===type?"active":""}" onclick="modulePage('${k}')">${{timeline:"⏱ Таймлайн",shots:"🎥 Съёмка",interview:"🎤 Интервью",edit:"🎬 Монтаж",finance:"💰 Финансы",delivery:"📦 Выдача",contract:"📄 Договор"}[k]}</button>`).join("")}</div>`;let body="";
-if(type==="timeline"){ensureV04(w);let ci=w.live.running?w.live.event:currentIndex(w);body=`<div class="card"><div class="route">${w.timeline.map((e,i)=>`<button class="${i===ci?"active":""}" onclick="jumpEvent(${i})">${esc(e.t)}</button>`).join("")}</div><div class="timeline">${w.timeline.map((e,i)=>`<div class="event ${e.done?"done":""} ${i===ci?"current":""}"><div class="time">${esc(e.t)} — ${esc(e.a)}</div><div class="muted">${esc(e.b)}</div><label class="check" style="border:0;padding-bottom:0"><input type="checkbox" ${e.done?"checked":""} onchange="markEvent(${i},this.checked)"><span>Событие выполнено</span></label></div>`).join("")}</div><button onclick="addTimeline()" style="margin-top:10px">＋ Добавить событие</button></div>`;}
-if(type==="shots"){ensureV04(w);let done=w.shots.filter(s=>s.done).length;let current=stageName(w);let cats=["Все","Сборы","ЗАГС","Прогулка","Ресторан","Финал"];body=`<div class="card"><b>${done}/${w.shots.length} кадров снято</b><div class="progress"><div style="width:${w.shots.length?done/w.shots.length*100:0}%"></div></div><div class="stagebox"><b>Сейчас: ${esc(current)}</b><small>Shot List автоматически привязан к этапу</small></div></div><div class="tabs">${cats.map(c=>`<button onclick="shotFilter('${c}')">${c}</button>`).join("")}</div><div id="shotList"></div><button onclick="addShot()" style="width:100%">＋ Добавить кадр</button>`;setTimeout(()=>shotFilter("Все"),0);}
-if(type==="interview")body=`<div class="card">${w.interviews.map((q,i)=>`<div style="margin-bottom:18px"><b>${esc(q.x)}</b><textarea placeholder="Ответ молодожёна..." oninput="answer(${i},this.value)">${esc(q.answer)}</textarea></div>`).join("")}</div>`;
-if(type==="finance"){let balance=(w.price||0)-(w.paid||0);body=`<div class="card"><div class="muted">Стоимость свадьбы</div><div class="money">${fmt(w.price)} ₽</div><div class="row"><div class="stat"><b class="paid">${fmt(w.paid)} ₽</b><span class="muted">получено</span></div><div class="stat"><b class="balance">${fmt(balance)} ₽</b><span class="muted">остаток</span></div></div><div class="progress"><div style="width:${w.price?Math.min(100,(w.paid/w.price)*100):0}%"></div></div></div><div class="card"><h3 style="margin-top:0">Оплата</h3><input id="payInput" type="number" placeholder="Сумма платежа"><button onclick="addPayment()">＋ Добавить оплату</button></div>`}
-if(type==="delivery"){let d=w.delivery||{film:false,clip:false,photos:false,backup:false};body=`<div class="card"><h3 style="margin-top:0">Материалы</h3>${deliveryRow("film","🎬","Свадебный фильм",d.film)}${deliveryRow("clip","🎞","Клип",d.clip)}${deliveryRow("photos","📷","Фотографии",d.photos)}${deliveryRow("backup","💾","Резервная копия",d.backup)}</div><div class="card"><b>Статус выдачи</b><div class="muted" style="margin-top:6px">${[d.film,d.clip,d.photos,d.backup].filter(Boolean).length}/4 готово</div></div>`}
-if(type==="contract"){let c=w.contract||{number:"",signed:false,comment:""};body=`<div class="card"><h3 style="margin-top:0">Договор</h3><input id="contractNumber" placeholder="Номер договора" value="${esc(c.number)}"><label class="check"><input type="checkbox" id="contractSigned" ${c.signed?"checked":""} onchange="saveContract()"> <span>Договор подписан</span></label><textarea id="contractComment" placeholder="Комментарий" oninput="saveContract()">${esc(c.comment)}</textarea></div><div class="card"><span class="badge ${c.signed?"ok":""}">${c.signed?"Подписан":"Не подписан"}</span></div>`}
-if(type==="edit")body=`<div class="card"><h3 style="margin-top:0">Структура фильма</h3>${["INTRO","УТРО","ИСТОРИЯ ПАРЫ","ЦЕРЕМОНИЯ","ЭМОЦИИ","БАНКЕТ","РЕЧИ","ТАНЦЫ","ФИНАЛ"].map((x,i)=>`<div class="listrow"><div class="grow"><b>${i+1}. ${x}</b></div><span class="muted">сцена</span></div>`).join("")}</div><div class="card"><b>Экспорт</b><div class="muted" style="margin-top:6px">H.264 · 30 Mbps</div></div>`;
-$("content").innerHTML=tabs+body}
-
-function toggleLive(){let w=selected();ensureV04(w);w.live.running=!w.live.running;save();home()}
-function nextEvent(){let w=selected();ensureV04(w);w.live.event=Math.min((w.live.event||0)+1,w.timeline.length-1);w.live.running=true;save();home()}
-function jumpEvent(i){let w=selected();ensureV04(w);w.live.event=i;w.live.running=true;save();modulePage("timeline")}
-function markEvent(i,v){let w=selected();ensureV04(w);w.timeline[i].done=v;if(v&&w.live.event===i&&i<w.timeline.length-1)w.live.event=i+1;save();modulePage("timeline")}
-
-function shotFilter(cat){let w=selected();ensureV04(w);let arr=cat==="Все"?w.shots:w.shots.filter(s=>s.cat===cat);let el=$("shotList");if(!el)return;el.innerHTML=`<div class="card">${arr.map(s=>{let i=w.shots.indexOf(s);return `<label class="moment"><input type="checkbox" ${s.done?"checked":""} onchange="toggleShot(${i},this.checked)"><span class="grow ${s.done?"shotdone":""}">${esc(s.x)}<small class="muted" style="display:block">${esc(s.cat||"Общее")}${s.important?" · ⭐":""}</small></span><button class="darkbtn" onclick="toggleImportant(${i});event.preventDefault()">⭐</button></label>`}).join("")}</div>`}
-function toggleShot(i,v){selected().shots[i].done=v;save();modulePage("shots")} function toggleImportant(i){selected().shots[i].important=!selected().shots[i].important;save();modulePage("shots")}function answer(i,v){selected().interviews[i].answer=v;save()}
-function addShot(){let x=prompt("Название кадра");if(x){let cat=prompt("Категория","Общее")||"Общее";selected().shots.push({x,cat,done:false,important:false});save();modulePage("shots")}}
-function addTimeline(){let t=prompt("Время (например 18:30)");let a=prompt("Событие");if(t&&a){selected().timeline.push({t,a,b:"",done:false});selected().timeline.sort((a,b)=>a.t.localeCompare(b.t));save();modulePage("timeline")}}
-
-function deliveryRow(key,icon,label,value){return `<label class="check"><input type="checkbox" ${value?"checked":""} onchange="toggleDelivery('${key}',this.checked)"><span>${icon} ${label}</span>${value?'<span class="badge ok">Готово</span>':''}</label>`}
-function toggleDelivery(key,v){let w=selected();w.delivery=w.delivery||{};w.delivery[key]=v;save();modulePage("delivery")}
-function addPayment(){let n=+$("payInput").value||0;if(n>0){let w=selected();w.paid=Math.min(w.price,(w.paid||0)+n);save();modulePage("finance")}}
-function saveContract(){let w=selected();w.contract={number:$("contractNumber")?.value||"",signed:$("contractSigned")?.checked||false,comment:$("contractComment")?.value||""};save()}
-function weddingsPage(){$("pageTitle").textContent="Свадьбы";$("content").innerHTML=`<div class="card">${data.weddings.map(w=>`<div class="listrow"><div class="grow" onclick="selectWedding('${w.id}')"><b>${esc(w.groom)} & ${esc(w.bride)}</b><div class="muted">${w.date} · ${esc(w.city)}</div></div><button onclick="editWedding('${w.id}')">Изм.</button><button class="danger" onclick="delWedding('${w.id}')">×</button></div>`).join("")}</div><button onclick="newWedding()" style="width:100%">＋ Новая свадьба</button>`}
-function selectWedding(id){data.selected=id;save();home()}function newWedding(){editWedding(null)}
-function editWedding(id){let w=id?data.weddings.find(x=>x.id===id):{id:crypto.randomUUID(),bride:"",groom:"",date:new Date().toISOString().slice(0,10),city:"",price:60000,paid:0,start:"12:00",end:"23:00",notes:"",timeline:defaultTimeline(),shots:defaultShots(),interviews:defaultQuestions(),delivery:{film:false,clip:false,photos:false,backup:false},contract:{number:"",signed:false,comment:""}};$("panel").innerHTML=`<h2>${id?"Редактирование":"Новая свадьба"}</h2><input id="groom" placeholder="Жених" value="${esc(w.groom)}"><input id="bride" placeholder="Невеста" value="${esc(w.bride)}"><input id="date" type="date" value="${w.date}"><input id="city" placeholder="Город" value="${esc(w.city)}"><input id="price" type="number" placeholder="Стоимость" value="${w.price}"><input id="paid" type="number" placeholder="Предоплата" value="${w.paid}"><div style="display:flex;gap:8px"><input id="start" value="${w.start}"><input id="end" value="${w.end}"></div><textarea id="notes" placeholder="Заметки">${esc(w.notes)}</textarea><div class="actions"><button class="darkbtn" onclick="closeSheet()">Отмена</button><button onclick="saveWedding('${w.id}',${!!id})">Сохранить</button></div>`;$("sheet").classList.add("open")}
-function saveWedding(id,existing){let old=existing?data.weddings.find(x=>x.id===id):null;let w={id,bride:$("bride").value,groom:$("groom").value,date:$("date").value,city:$("city").value,price:+$("price").value||0,paid:+$("paid").value||0,start:$("start").value,end:$("end").value,notes:$("notes").value,timeline:old?.timeline||defaultTimeline(),shots:old?.shots||defaultShots(),interviews:old?.interviews||defaultQuestions(),delivery:old?.delivery||{film:false,clip:false,photos:false,backup:false},contract:old?.contract||{number:"",signed:false,comment:""}};if(existing)data.weddings[data.weddings.findIndex(x=>x.id===id)]=w;else data.weddings.unshift(w);data.selected=id;save();closeSheet();home()}
-function delWedding(id){if(confirm("Удалить свадьбу?")){data.weddings=data.weddings.filter(w=>w.id!==id);data.selected=data.weddings[0]?.id||null;save();weddingsPage()}}
-function closeSheet(){$("sheet").classList.remove("open")}
-function tasksPage(){$("pageTitle").textContent="Чек-лист";if(!data.tasks.length)data.tasks=tasksDefault.map(x=>({x,done:false}));save();$("content").innerHTML=`<div class="card">${data.tasks.map((t,i)=>`<label class="check"><input type="checkbox" ${t.done?"checked":""} onchange="data.tasks[${i}].done=this.checked;save()"><span>${t.x}</span></label>`).join("")}</div>`}
-function settingsPage(){$("pageTitle").textContent="Настройки";$("content").innerHTML=`<div class="card"><h3 style="margin-top:0">Моя техника</h3><div class="listrow"><span class="grow">Камера</span><b>Canon R6 Mark II</b></div><div class="listrow"><span class="grow">Объективы</span><b>24–70 / 70–200</b></div><div class="listrow"><span class="grow">Стабилизатор</span><b>DJI RS5</b></div><div class="listrow"><span class="grow">Экспорт</span><b>H.264 · 30 Mbps</b></div></div>`}
-if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js");home();
-</script></body></html>
+const defaultShots=[
+["Детали колец","details",true],["Платье / костюм","details",true],["Приглашение / полиграфия","details",false],
+["Макияж и причёска","people",true],["Руки родителей / эмоции","people",false],["Портрет невесты","people",true],
+["Портрет жениха","people",true],["Встреча пары","people",true],["Общий план церемонии","must",true],
+["Вход пары","must",true],["Обмен кольцами","must",true],["Поцелуй","must",true],["Подписи","must",true],
+["Выход из ЗАГСа / церемонии","must",true],["Групповое фото","people",true],["Портрет пары крупный","people",true],
+["Портрет пары общий","people",true],["Прогулка — детали","details",false],["Прогулка — движение","people",true],
+["Декор ресторана","details",true],["Гости и реакции","people",true],["Первый танец","must",true],
+["Торт","details",false],["Букет","details",false],["Танцы","people",true],["Финальный кадр","must",true]
+];
+let state=JSON.parse(localStorage.getItem('weddingPhoto')||'null')||{
+name:"Новая свадьба",date:"",guests:"",price:"60000",notes:"",
+timeline:[["10:00","Сборы"],["13:00","ЗАГС / церемония"],["14:00","Прогулка"],["17:00","Ресторан"]],
+shots:defaultShots.map((x,i)=>({id:i,title:x[0],type:x[1],must:x[2],done:false})),
+gear:["2 камеры","Запасные аккумуляторы","Карты памяти","Вспышка","Синхронизаторы","Ремешки / крепления","Чистая оптика"].map(x=>({t:x,d:false}))
+};
+function save(){localStorage.setItem('weddingPhoto',JSON.stringify(state));render()}
+function show(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');render()}
+function render(){
+document.getElementById('weddingName').textContent=state.name;document.getElementById('weddingDate').textContent=state.date||'—';document.getElementById('guests').textContent=state.guests||'—';document.getElementById('setName').value=state.name;document.getElementById('setDate').value=state.date;document.getElementById('setGuests').value=state.guests;document.getElementById('setPrice').value=state.price;
+const done=state.shots.filter(x=>x.done).length, total=state.shots.length, pct=total?Math.round(done/total*100):0;document.getElementById('doneMetric').textContent=pct+'%';document.getElementById('shotMetric').textContent=done+'/'+total;document.getElementById('progressText').textContent=pct+'%';document.getElementById('progressBar').style.width=pct+'%';document.getElementById('price').textContent=(Number(state.price)||0).toLocaleString('ru-RU')+' ₽';
+document.getElementById('todayList').innerHTML=state.timeline.map((s,i)=>`<div class="card"><div class="row"><b>${s[0]} · ${s[1]}</b><span class="tag">${state.shots.filter(x=>x.done).length}/${state.shots.length}</span></div></div>`).join('');
+document.getElementById('timelineList').innerHTML=state.timeline.map((s,i)=>`<div class="card"><div class="row"><div><b>${s[0]}</b><br><span class="muted">${s[1]}</span></div><button onclick="delStage(${i})">Удалить</button></div></div>`).join('');
+renderShots('all');document.getElementById('gear').innerHTML=state.gear.map((g,i)=>`<div class="item"><input type="checkbox" ${g.d?'checked':''} onchange="state.gear[${i}].d=this.checked;save()"><span class="${g.d?'done':''}">${g.t}</span></div>`).join('');document.getElementById('notes').value=state.notes;
+}
+let shotFilter='all';function filterShots(f){shotFilter=f;renderShots(f)}
+function renderShots(f){let arr=state.shots.filter(s=>f==='all'||(f==='must'&&s.must)||(f===s.type));document.getElementById('shotList').innerHTML=arr.map(s=>`<div class="card"><div class="item"><input type="checkbox" ${s.done?'checked':''} onchange="toggleShot(${s.id})"><div><b class="${s.done?'done':''}">${s.title}</b><div class="muted small">${s.must?'⭐ обязательный':''} ${s.type==='people'?'· люди':s.type==='details'?'· детали':''}</div></div></div></div>`).join('')}
+function toggleShot(id){state.shots.find(x=>x.id===id).done=!state.shots.find(x=>x.id===id).done;save()}
+function addStage(){let t=document.getElementById('newTime').value,n=document.getElementById('newStage').value.trim();if(!t||!n)return;state.timeline.push([t,n]);state.timeline.sort((a,b)=>a[0].localeCompare(b[0]));document.getElementById('newStage').value='';save()}
+function delStage(i){state.timeline.splice(i,1);save()}
+function saveSettings(){state.name=document.getElementById('setName').value||'Новая свадьба';state.date=document.getElementById('setDate').value;state.guests=document.getElementById('setGuests').value;state.price=document.getElementById('setPrice').value||'0';save();show('home')}
+function saveNotes(){state.notes=document.getElementById('notes').value;save();alert('Сохранено')}
+function resetApp(){if(confirm('Удалить все данные?')){localStorage.removeItem('weddingPhoto');location.reload()}}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js');render();
+</script>
+</body></html>

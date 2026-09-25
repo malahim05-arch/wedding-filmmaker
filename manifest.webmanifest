@@ -1,10 +1,10 @@
 {
-  "name": "Wedding Filmmaker",
-  "short_name": "Wedding Film",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#171717",
-  "theme_color": "#171717",
-  "lang": "ru",
-  "description": "Рабочее приложение свадебного видеографа"
+  "name":"Wedding Photographer",
+  "short_name":"Wedding Photo",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#0d0f13",
+  "theme_color":"#111318",
+  "lang":"ru",
+  "icons":[]
 }
